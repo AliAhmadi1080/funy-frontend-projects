@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="./tailwind.js"></script>
+
+    <!--
+         OPTIONAL
+         FOR ADDING CUSTOM OPTIONS AND STYLES
+       -->
+
+    <script src="customize/tailwind.config.js"></script>
+    <link rel="stylesheet" href="customize/cutsom.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .nav-bar-item {
+          @apply ml-3 text-stone-300 font-semibold opacity-100;
+        }
+        .circle-icon {
+          @apply rounded-full bg-gray-800 w-12 h-12 text-center cursor-pointer text-white;
+        }
+        .skill-card {
+          @apply w-full my-5 mx-4;
+        }
+        .progress {
+          @apply h-2 w-[88%] xl:w-[95%] lg:w-[93%] md:w-[91%] sm:w-[89%] bg-gray-500;
+        }
+        @layer components {
+          .skill-card .head {
+            @apply flex justify-between w-[92%];
+          }
+          .skill-card .head .p-header {
+            @apply text-lg;
+          }
+          .skill-card .head .p-percent {
+            @apply text-lime-400;
+          }
+          .skill-card .content {
+            @apply progress;
+          }
+          .skill-card .content .progress-bar {
+            @apply h-2 bg-green-500;
+          }
+          .skill-card .content .progress-bar {
+            width: var(--percent);
+          }
+        }
+      }
+    </style>
+    <title>رزومه</title>
+  </head>
+
+  <body class="m-0" style="font-family: vazir">
+    <header>
+      <div
+        class="w-full h-full opacity-[55%] bg-center"
+        style="
+          background-repeat: no-repeat;
+          background-image: url(https://demo.templateflip.com/creative-cv/images/cc-bg-1.jpg);
+        "
+      >
+        <nav
+          class="flex opacity-80 lg:opacity-50 xl:opacity-50 md:opacity-50 sm:opacity-50 h-auto items-end justify-center xl:justify-normal flex-col xl: lg:justify-start lg: lg:flex-row-reverse md:flex-row-reverse sm:flex-row-reverse xl:flex-row-reverse text-lg sm: sm:justify-center"
+          style="
+            background-image: url(data:image/jpeg;base64,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);
+          "
+        >
+          <div class="nav-bar-item xl:mr-5 lg:mr-5 md:mr-5">
+            <a href="#contact-me">ارتباط با من</a>
+          </div>
+          <div class="nav-bar-item">
+            <a href="#personal-skills">مهارت ها</a>
+          </div>
+          <div class="nav-bar-item"><a href="#about">درباره من</a></div>
+        </nav>
+        <div class="opacity-100">
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class="icon flex justify-center">
+            <img
+              src="./images/image.jpg"
+              class="rounded-full w-[150px] h-[150px] object-cover border-green-600 border-[6px]"
+            />
+          </div>
+          <br />
+          <br />
+          <div class="flex items-center flex-col">
+            <h2 class="text-4xl text-white">علی احمدی</h2>
+            <br />
+            <p class="text-stone-200 text-lg">توسعه دهنده بک اند</p>
+          </div>
+          <br /><br /><br /><br /><br /><br /><br /><br />
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-white">
+      <br />
+      <div
+        class="m-10 about-card h-30 flex flex-col justify-around lg:flex-row md:flex-col sm:flex-col md:mx-[10%]"
+        id="about"
+      >
+        <div
+          class="w-full lg:text-right md:text-right sm:md:text-right 2xl:text-right text-center lg:ml-6 xl:ml-6 sm:ml-6 md:ml-6 ml-0 lg:w1/2 md:w-[90%] md:mr-4 sm:w-full"
+        >
+          <p
+            class="text-2xl sm:md:text-right text-center lg:text-right md:text-right sm:text-right xl:text-right mr-auto"
+          >
+            درباره
+          </p>
+          <p dir="rtl" class="text-stone-400 text-base sm:md:text-right">
+            من علی احمدی، توسعه‌دهنده بک‌اند و دانش‌آموز مقطع هفتم هستم. به
+            پروژه‌های متن باز علاقه دارم و گاهی در آن‌ها مشارکت می‌کنم. همچنین
+            در مسابقات برنامه‌نویسی شرکت می‌کنم تا مهارت‌ها و دانش فنی‌ام را
+            ارتقاء دهم. هدف من ایجاد نرم‌افزارهای با کیفیت و کمک به جامعه
+            توسعه‌دهندگان است.
+          </p>
+        </div>
+        <br />
+        <div
+          class="w-full sm:md:text-right 2xl:text-right ml-0 lg:ml-5 xl:ml-5 sm:ml-5 md:ml-5 lg:w1/2 text-2xl lg:text-right text-center"
+        >
+          <p
+            class="text-2xl text-center xl:text-right lg:text-right md:text-right sm:text-right"
+          >
+            اطلاعات کلی
+          </p>
+          <div dir="rtl" class="flex justify-between">
+            <ul class="font-bold list-none text-base w-full text-stone-400">
+              <br />
+              <li>سن</li>
+              <li>ایمیل</li>
+            </ul>
+            <ul
+              class="font-normal list-none text-base ml-5 text-stone-400 xl:ml-52 md:ml-52 sm:ml-44 lg:ml-32"
+            >
+              <br />
+              <li>13</li>
+              <li>aliahmadi.xx90@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div id="personal-skills" class="mx-auto w-3/5">
+        <h1 class="text-3xl max-w-fit mx-auto">مهارت ها</h1>
+        <br />
+        <div
+          class="grid grid-cols-1 shadow-2xl w-full lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
+        >
+          <div class="skill-card">
+            <div class="head">
+              <p class="p-header">HTML</p>
+              <p class="p-percent">85%</p>
+            </div>
+            <div class="content">
+              <div class="progress-bar" style="--percent: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="head">
+              <p class="p-header">CSS</p>
+              <p class="p-percent">70%</p>
+            </div>
+            <div class="content">
+              <div class="progress-bar" style="--percent: 70%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="head">
+              <p class="p-header">Tailwind CSS</p>
+              <p class="p-percent">65%</p>
+            </div>
+            <div class="content">
+              <div class="progress-bar" style="--percent: 65%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="head">
+              <p class="p-header">JS</p>
+              <p class="p-percent">50%</p>
+            </div>
+            <div class="content">
+              <div class="progress-bar" style="--percent: 50%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="head">
+              <p class="p-header">Python</p>
+              <p class="p-percent">75%</p>
+            </div>
+            <div class="content">
+              <div class="progress-bar" style="--percent: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="head">
+              <p class="p-header">Django</p>
+              <p class="p-percent">60%</p>
+            </div>
+            <div class="content">
+              <div class="progress-bar" style="--percent: 60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="contact-me mx-auto w-3/5 shadow-lg md:w-3/5 sm:3/5">
+        <form action="https://formspree.io/f/mayrgyyk" method="POST">
+          <div class="head text-center font-semibold mr-4">
+            <a href="#contact-me" id="contact-me" class="text-xl"
+              >ارتباط با من</a
+            >
+          </div>
+          <br />
+          <div
+            class="personal-info justify-start flex lg:flex-row-reverse xl:flex-row-reverse 2xl:flex-row-reverse flex-col md:flex-col sm:flex-col text-right mr-4"
+          >
+            <div class="input ml-5">
+              <p>اسم شما</p>
+              <input
+                type="text "
+                class="bg-stone-100 rounded text-right h-7 w-full"
+                placeholder="علی"
+                required
+                name="name"
+              />
+            </div>
+            <div class="input ml-5">
+              <p>ایمیل شما</p>
+              <input
+                type="email"
+                class="bg-stone-100 rounded text-right h-7 w-full"
+                placeholder="aliahmadi.xx90@gmail.com"
+                required="required"
+                name="email"
+              />
+            </div>
+          </div>
+          <br />
+          <div class="message flex text-right justify-end mr-4">
+            <div class="input ml-5 h-44 w-[99%]">
+              <p>نظر شما</p>
+              <textarea
+                required="required"
+                class="bg-stone-100 rounded text-right w-full h-[80%]"
+                name="message"
+              ></textarea>
+            </div>
+          </div>
+          <br />
+          <div class="submit flex justify-end">
+            <button
+              type="submit"
+              class="rounded bg-slate-200 w-[80%] mx-3 h-[20%]"
+            >
+              ارسال
+            </button>
+          </div>
+        </form>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </main>
+  </body>
+</html>
