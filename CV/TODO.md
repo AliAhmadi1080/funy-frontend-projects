@@ -6,3 +6,4 @@
 - [x] add contact me<br>
 - [ ] add transtions<br>
 - [x] send mail with JS
+- [ ] add link div to .project

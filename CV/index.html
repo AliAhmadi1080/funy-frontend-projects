@@ -13,7 +13,7 @@
        -->
 
     <script src="customize/tailwind.config.js"></script>
-    <link rel="stylesheet" href="customize/cutsom.css" />
+    <link rel="stylesheet" href="customize/custom.css" />
     <link
       href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
       rel="stylesheet"
@@ -35,6 +35,55 @@
           @apply h-2 w-[88%] xl:w-[95%] lg:w-[93%] md:w-[91%] sm:w-[89%] bg-gray-500;
         }
         @layer components {
+          .projects {
+            @apply mx-auto w-4/5 shadow-lg  sm:md:w-3/5;
+          }
+          .projects h1 {
+            @apply text-3xl max-w-fit mx-auto my-3;
+          }
+          .projects .project-container {
+            @apply flex mb-8 flex-col shadow-lg shadow-zinc-500;
+          }
+          .projects .project-container .project {
+            @apply flex justify-between flex-col xl:flex-row items-center sm:md:lg:flex-col;
+          }
+          .projects .project-container .hr-tag {
+            @apply border-stone-500 border-t-2;
+          }
+          .projects .project-container .project .image-project {
+            @apply mr-5 md:max-w-[75%] sm:max-w-[50%] max-w-[80%] w-full;
+          }
+          .projects .project-container .project .image-project .image-tag {
+            @apply rounded-2xl;
+          }
+          .projects .project-container .project .about-project {
+            @apply mx-5 sm:max-w-[50%]  md:max-w-[75%] max-w-[80%]  w-full;
+          }
+          .projects .project-container .project .about-project .project-title {
+            @apply items-center text-center my-6;
+          }
+          .projects
+            .project-container
+            .project
+            .about-project
+            .decribe-project
+            .p-tag {
+            @apply text-stone-400 text-lg py-3 sm:md:text-right;
+          }
+
+          .projects .project-container .link-container .link {
+            @apply flex text-blue-500 flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row sm:flex-row;
+          }
+          .projects .project-container .link-container .link-title {
+            @apply ml-3;
+          }
+          .projects .project-container .link-container {
+            @apply flex 2xl:xl:lg:md:flex-row-reverse m-5 sm:flex-col flex-col;
+          }
+          .projects .project-container .other-project-link {
+            @apply flex flex-row justify-end text-right;
+          }
+
           .skill-card .head {
             @apply flex justify-between w-[92%];
           }
@@ -57,6 +106,11 @@
       }
     </style>
     <title>رزومه</title>
+    <link
+      rel="shortcut icon"
+      href="./images/download.png"
+      type="image/x-icon"
+    />
   </head>
 
   <body class="m-0" style="font-family: vazir">
@@ -69,17 +123,19 @@
         "
       >
         <nav
-          class="flex opacity-80 lg:opacity-50 xl:opacity-50 md:opacity-50 sm:opacity-50 h-auto items-end justify-center xl:justify-normal flex-col xl: lg:justify-start lg: lg:flex-row-reverse md:flex-row-reverse sm:flex-row-reverse xl:flex-row-reverse text-lg sm: sm:justify-center"
-          style="
-            background-image: url(data:image/jpeg;base64,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);
-          "
+          class="flex h-0 pt-[48.75px] sm:pt-0 md:pt-0 lg:pt-0 xl:pt-0 sm:h-auto md:h-auto lg:h-auto xl:h-auto items-end justify-center flex-col-reverse xl: lg: lg:flex-row md:flex-row sm:flex-row xl:flex-row md:justify-end lg:justify-end xl:justify-end text-lg sm:justify-center"
+          
         >
-          <div class="nav-bar-item xl:mr-5 lg:mr-5 md:mr-5">
+          <div class="nav-bar-item">
             <a href="#contact-me">ارتباط با من</a>
           </div>
           <div class="nav-bar-item">
             <a href="#personal-skills">مهارت ها</a>
           </div>
+          <div class="nav-bar-item">
+            <a href="#projects">پروژه ها</a>
+          </div>
+
           <div class="nav-bar-item"><a href="#about">درباره من</a></div>
         </nav>
         <div class="opacity-100">
@@ -219,13 +275,92 @@
       <br />
       <br />
       <br />
-      <div class="contact-me mx-auto w-3/5 shadow-lg md:w-3/5 sm:3/5">
-        <form action="https://formspree.io/f/mayrgyyk" method="POST">
-          <div class="head text-center font-semibold mr-4">
-            <a href="#contact-me" id="contact-me" class="text-xl"
-              >ارتباط با من</a
-            >
+      <div id="projects" class="projects">
+        <h1 class="">پروژه‌ها</h1>
+        <div class="project-container">
+          <div class="project">
+            <div class="image-project">
+              <img src="./images/weblog.jpg" class="image-tag" />
+            </div>
+            <div class="about-project">
+              <div class="project-title">
+                <p class="text-2xl xl:lg:sm:md:text-center text-center mr-auto">
+                  وبلاگ
+                </p>
+              </div>
+              <div class="decribe-project">
+                <p dir="rtl" class="p-tag">
+                  پروژه وب سایت برای وبلاگ شخصی شامل ایجاد یک وبلاگ ساده برای
+                  نوشتن و انتشار مطالب روزانه است. این وبلاگ به گونه‌ای طراحی
+                  شده است که نویسنده بتواند به راحتی محتوای خود را منتشر کرده و
+                  با دیگران به اشتراک بگذارد. هدف اصلی این پروژه برطرف کردن
+                  نیازهای شخصی نویسنده به یک بستر ساده و کاربردی برای نوشتن و به
+                  اشتراک‌گذاری مطالب روزانه است. طراحی و پیاده‌سازی این پروژه در
+                  طول دو روز انجام شده و از تکنولوژی‌های HTML، CSS، JavaScript،
+                  Django و BootStarp برای ساخت آن استفاده شده است.
+                </p>
+              </div>
+            </div>
           </div>
+          <hr class="hr-tag" />
+          <div class="other-project-link">
+            <div class="link-container">
+              <div class="link-title">: لینک سایت</div>
+
+              <div class="link">
+                <p>fahmadi2180.python</p>
+                <p>anywhere.com/</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-container">
+          <div class="project">
+            <div class="image-project">
+              <img src="./images/weblog.jpg" class="image-tag" />
+            </div>
+            <div class="about-project">
+              <div class="project-title">
+                <p class="text-2xl xl:lg:sm:md:text-center text-center mr-auto">
+                  وبلاگ
+                </p>
+              </div>
+              <div class="decribe-project">
+                <p dir="rtl" class="p-tag">
+                  پروژه وب سایت برای وبلاگ شخصی شامل ایجاد یک وبلاگ ساده برای
+                  نوشتن و انتشار مطالب روزانه است. این وبلاگ به گونه‌ای طراحی
+                  شده است که نویسنده بتواند به راحتی محتوای خود را منتشر کرده و
+                  با دیگران به اشتراک بگذارد. هدف اصلی این پروژه برطرف کردن
+                  نیازهای شخصی نویسنده به یک بستر ساده و کاربردی برای نوشتن و به
+                  اشتراک‌گذاری مطالب روزانه است. طراحی و پیاده‌سازی این پروژه در
+                  طول دو روز انجام شده و از تکنولوژی‌های HTML، CSS، JavaScript،
+                  Django و BootStarp برای ساخت آن استفاده شده است.
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr class="hr-tag" />
+          <div class="other-project-link">
+            <div class="link-container">
+              <div class="link-title">: لینک سایت</div>
+
+              <div class="link">
+                <p>fahmadi2180.python</p>
+                <p>anywhere.com/</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <br />
+      <br />
+      <br />
+      <div
+        id="contact-me"
+        class="contact-me mx-auto w-3/5 shadow-lg md:w-3/5 sm:3/5"
+      >
+        <form action="https://formspree.io/f/mayrgyyk" method="POST">
+          <h1 class="text-3xl max-w-fit mx-auto my-3">ارتباط با من</h1>
           <br />
           <div
             class="personal-info justify-start flex lg:flex-row-reverse xl:flex-row-reverse 2xl:flex-row-reverse flex-col md:flex-col sm:flex-col text-right mr-4"
@@ -257,7 +392,7 @@
               <p>نظر شما</p>
               <textarea
                 required="required"
-                class="bg-stone-100 rounded text-right w-full h-[80%]"
+                class="bg-stone-100 rounded text-right w-[90%] h-[80%]"
                 name="message"
               ></textarea>
             </div>
