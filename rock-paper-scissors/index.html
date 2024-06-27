@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="score_board">
+            <div class="status"><span id="name"></span></div>
+            <div class="count"></div>
+        </section>
+        <section class="result">
+            <img src="" alt="" id="player_play">
+            <span id="vs-span" >vs</span>
+            <img src="" alt="" id="computer_play">
+        </section>
+        <section class="choise">
+            <img id="rock" onclick="place_item('rock')" src="images/rock.jpg" alt="">
+            <span id="vs-span">or</span>
+            <img id="paper" onclick="place_item('paper')" src="images/paper.jpg" alt="">
+            <span id="vs-span">or</span>
+            <img id="scissors" onclick="place_item('scissors')" src="images/scissors.png" alt="">
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
